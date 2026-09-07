@@ -1,10 +1,13 @@
-import { Bell, Moon, Search, Sun } from "lucide-react";
+import { Bell, Moon, Search, Sun } from "lucide-react"
 import { useState } from "react";
 import { useLocation } from "react-router-dom"
 import userPhoto from "../../assets/img/photo_2026-08-13_12-27-13.png"
+import { useTheme } from "../../context/ThemeContext";
 
 export const Header = () => {
   const location = useLocation()
+  const { theme, setTheme } = useTheme();
+
 
   const getPageTitle = (pathname: string) => {
     if (pathname.startsWith("/dashboard")) return "Dashboard";
@@ -15,7 +18,7 @@ export const Header = () => {
   
     return "Dashboard";
   };
-  const title = getPageTitle[location.pathname] || "Dashboard";
+  const title = getPageTitle(location.pathname);
 
   const [dark, setDark] = useState(false);
 
@@ -37,14 +40,19 @@ export const Header = () => {
         {/* Mood  */}
         <div className="flex items-center">
           <button
-              onClick={() => setDark(!dark)}
-              className={`w-10 h-7 rounded-full p-1 flex items-center transition-all ${
-                dark ? "bg-[#023337] justify-end" : "bg-[#EAF7E8] justify-start"
+              className={`${theme ? "bg-gray-200" : "bg-[#323337]"} mood 
+              w-10 h-7 rounded-full p-1 flex items-center transition-all ${
+                dark ?  "bg-[#EAF7E8] justify-start" : "bg-[#023337] justify-end"
               }`}
+              onClick={() => {
+                setTheme(!theme)
+                setDark(!dark)
+              }}
+              
             >
               <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
                 {dark ? (
-                  <Moon size={13} />
+                  <Moon size={13}/>
                 ) : (
                   <Sun size={13} />
                 )}
