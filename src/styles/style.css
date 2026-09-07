@@ -1,0 +1,13 @@
+@import "tailwindcss";
+body{
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar{
+    border-right: 2px solid #0000001F;
+    color: #6A717F;
+}
+
+.search{
+    border-radius: 30px;
+}
