@@ -108,12 +108,14 @@ function App() {
                 Bluesky
               </a>
             </li>
+            <li>Dilmurodjon</li>
           </ul>
         </div>
       </section>
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+
     </>
   )
 }
