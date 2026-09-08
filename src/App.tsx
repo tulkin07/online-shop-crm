@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 
 import { DashboardPage } from './processes/pages/dashboard/ui/DashboardPage';
-// import { OrdersPage } from './processes/pages/ordermanagement/ui/OrdersPage';
-// import { CustomersPage } from './processes/pages/customers/ui/CustomersPage';
-// import { CategoriesPage } from './processes/pages/categories/ui/CategoriesPage';
-// import { AddProductPage } from './processes/pages/products/ui/AddProductPage';
+import { OrdersPage } from './processes/pages/ordermanagement/ui/OrdersPage';
+import { CustomersPage } from './processes/pages/customers/ui/CustomersPage';
+import { CategoriesPage } from './processes/pages/categories/ui/CategoriesPage';
+import { AddProductPage } from './processes/pages/products/ui/AddProductPage';
 
 
 export const App: React.FC = () => {
@@ -18,12 +18,12 @@ export const App: React.FC = () => {
 
 
         <Route path="/dashboard" element={<DashboardPage />} />
-        {/* <Route path="/orders" element={<OrdersPage />} /> */}
+        <Route path="/orders" element={<OrdersPage />} />
 
 
-        {/* <Route path="/customers" element={<CustomersPage />} />
+        <Route path="/customers" element={<CustomersPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
-        <Route path="/products" element={<AddProductPage />} /> */}
+        <Route path="/products" element={<AddProductPage />} />
 
 
         <Route path="/orders" element={<div className="p-8 text-2xl font-bold">Order Page (Coming soon)</div>} />
