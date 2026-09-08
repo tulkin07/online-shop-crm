@@ -80,9 +80,9 @@ export const Sidebar: React.FC = () => {
             <NavLink to="/admin-role" className={linkClass}>
               <Shield size={18} /> Admin role
             </NavLink>
-            <NavLink to="/control-authority" className={linkClass}>
+            {/* <NavLink to="/control-authority" className={linkClass}>
               <Lock size={18} /> Control Authority
-            </NavLink>
+            </NavLink> */}
           </nav>
         </div>
       </div>
